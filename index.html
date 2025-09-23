@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wikipedia 2.0</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script>
+    // Préserve le choix utilisateur
+    if (localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+  <div id="header"></div>
+  <!-- HERO -->
+  <section
+    class="h-screen relative w-full bg-gray-900 text-black dark:text-white bg-[url('https://images.pexels.com/photos/7841804/pexels-photo-7841804.jpeg')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-white dark:from-gray-900 to-white/0 dark:to-gray-900/0"></div>
+    <div class="absolute inset-0 flex flex-col justify-top px-4 mt-6">
+      <h2 class="text-2xl font-semibold">La connaissance, Moderne, Ouverte</h2>
+      <p class="mt-2 text-sm">Des millions d’articles créés et partagés pour tous.</p>
+      <a href="#"
+        class="mt-4 bg-blue-600 px-4 py-2 rounded-xl text-white font-medium hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 w-full text-center">Explorer</a>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h3 class="text-lg font-semibold mb-4">Thématiques</h3>
+    <div class="grid grid-cols-4 gap-4 text-center text-sm">
+      <div><span class="block text-2xl">⚛️</span>Science</div>
+      <div><span class="block text-2xl">🏛️</span>Histoire</div>
+      <div><span class="block text-2xl">🎨</span>Art</div>
+      <div><span class="block text-2xl">🌍</span>Culture</div>
+    </div>
+  </section>
+
+<!-- HISTOIRE -->
+<section class="max-w-6xl mx-auto py-6 px-4">
+  <h3 class="text-lg font-semibold mb-3">Aujourd’hui dans l’histoire</h3>
+  <p class="mb-3">Des événements marquants chaque jour de l’année</p>
+  <div class="flex flex-col md:flex-row gap-6">
+    <!-- IMAGE -->
+    <img src="https://www.radiofrance.fr/pikapi/images/fb6b6433-0f78-45b6-af30-6a823b5ab530/1280?webp=false"
+      alt="Débat presidentiel Nixon vs Kennedy"
+      class="w-full md:w-1/2 h-auto object-cover rounded">
+
+    <!-- TEXTE -->
+    <div class="flex flex-col justify-start md:w-1/2">
+      <p class="font-bold text-lg">26 septembre 1960 - Premier débat présidentiel télévisé aux États-Unis (Kennedy vs.
+        Nixon)</p>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">John F. Kennedy et Richard Nixon participent au tout
+        premier débat présidentiel diffusé à la télévision. Cet événement historique marque un tournant dans la
+        politique américaine : l’image et la communication télévisuelle deviennent essentielles. Kennedy, confiant et
+        charismatique à l’écran, séduit l’audience télévisée, tandis que Nixon, affaibli et mal préparé visuellement,
+        apparaît défavorisé. Ce débat est souvent cité comme un moment clé ayant contribué à la victoire de Kennedy.</p>
+      <a href="#"
+        class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-medium text-center w-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+        Voyager dans l’histoire →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ARTICLES -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h3 class="text-lg font-semibold mb-4">Articles du jour</h3>
+    <p class="mb-3">Trois sujets mis en lumière par la communauté</p>
+    <div id="articles-container" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Articles dynamiques -->
+    </div>
+  </section>
+
+  <!-- PARTICIPER -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h3 class="text-lg font-semibold mb-4">Participez à Wikipedia 2.0</h3>
+    <p class="mb-3">Une encyclopédie libre, enrichie chaque jour par des milliers de personnes comme vous.</p>
+    <div class="flex flex-row w-full">
+      <a href="#"
+        class="mt-auto inline-block bg-blue-600 dark:bg-blue-500 text-white text-center px-4 py-2 rounded-xl text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-600 w-screen mx-2">Commencer
+        à contribuer</a>
+      <a href="#"
+        class="mt-auto inline-block bg-gray-200 dark:bg-gray-700 text-black dark:text-gray-100 text-center px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 w-screen mx-2">Voir
+        comment ça marche</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/footer.js"></script>
+</body>
+
+</html>
