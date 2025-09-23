@@ -105,75 +105,77 @@ const isIndex = !!document.getElementById("articles-container");
     });
   }
 
-  if (isArticle) {
+if (isArticle) {
     const params = new URLSearchParams(window.location.search);
     const articleId = parseInt(params.get("id"), 10);
     const article = data.articles.find(a => a.id === articleId);
 
     if (!article) {
-      container.innerHTML = `<p class="text-red-500 font-bold">Article non trouvé.</p>`;
-      return;
+        container.innerHTML = `<p class="text-red-500 dark:text-red-400 font-bold">Article non trouvé.</p>`;
+        return;
     }
 
     let sectionsHTML = "";
     article.sections.forEach(section => {
-      if (section.titre === "Données générales") {
-        let rows = "";
-        section.contenu.split("\n").forEach(line => {
-          const [key, value] = line.split(" : ");
-          rows += `
-            <tr class="border-b border-gray-300 dark:border-gray-600">
-              <td class="font-semibold py-1 px-2 text-gray-800 dark:text-gray-200">${key}</td>
-              <td class="py-1 px-2 text-gray-700 dark:text-gray-300">${value}</td>
-            </tr>
-          `;
-        });
+        if (section.titre === "Données générales") {
+            let rows = "";
+            section.contenu.split("\n").forEach(line => {
+                const [key, value] = line.split(" : ");
+                rows += `
+                    <tr class="border-b border-gray-300 dark:border-gray-600">
+                        <td class="font-semibold py-1 px-2 text-gray-800 dark:text-gray-200">${key}</td>
+                        <td class="py-1 px-2 text-gray-700 dark:text-gray-300">${value}</td>
+                    </tr>
+                `;
+            });
 
-        sectionsHTML += `
-          <div class="bg-gray-100 dark:bg-gray-700 rounded-xl p-4">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">${section.titre}</h3>
-            <table class="table-auto mt-2 w-full">
-              <tbody>
-                ${rows}
-              </tbody>
-            </table>
-          </div>
-        `;
-      } else {
-        sectionsHTML += `
-          <h3 class="text-xl font-semibold mt-6 text-gray-900 dark:text-gray-100">${section.titre}</h3>
-          <p class="text-gray-700 dark:text-gray-300 whitespace-pre-line mt-2">${section.contenu}</p>
-        `;
-      }
+            sectionsHTML += `
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-xl p-4 mt-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">${section.titre}</h3>
+                    <table class="table-auto mt-2 w-full">
+                        <tbody>
+                            ${rows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        } else {
+            sectionsHTML += `
+                <h3 class="text-xl font-semibold mt-6 text-gray-900 dark:text-gray-100">${section.titre}</h3>
+                <p class="text-gray-700 dark:text-gray-300 whitespace-pre-line mt-2">${section.contenu}</p>
+            `;
+        }
     });
 
     let timelineHTML = '<div class="border-l-2 border-gray-300 dark:border-gray-600 pl-4 mt-4">';
     article.timeline.forEach(item => {
-      timelineHTML += `
-        <div class="mb-2">
-          <span class="font-semibold text-gray-800 dark:text-gray-200">${item.date}</span> :
-          <span class="text-gray-700 dark:text-gray-300">${item.evenement}</span>
-        </div>
-      `;
+        timelineHTML += `
+            <div class="mb-2">
+                <span class="font-semibold text-gray-800 dark:text-gray-200">${item.date}</span> :
+                <span class="text-gray-700 dark:text-gray-300">${item.evenement}</span>
+            </div>
+        `;
     });
     timelineHTML += "</div>";
 
     container.innerHTML = `
-      <a href="index.html" class="text-blue-500 dark:text-blue-400 hover:underline mb-4 inline-block">← Retour aux articles</a>
-      <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">${article.titre}</h1>
-      <img src="${article.image}" alt="${article.titre}" class="w-full h-64 object-contain rounded mb-4">
-      <p class="text-gray-700 dark:text-gray-300 mb-4">${article.resume}</p>
-      ${sectionsHTML}
-      <h3 class="text-xl font-semibold mt-6 text-gray-900 dark:text-gray-100">Timeline</h3>
-      ${timelineHTML}
-      <h3 class="text-xl font-semibold mt-6 text-gray-900 dark:text-gray-100">Hommage</h3>
-      <div class="flex flex-row gap-6">
-        <img src="${article.hommage.photo}" alt="${article.hommage.nom}" class="w-48 h-48 object-contain rounded mt-2">
-        <div class="flex flex-col gap-6">
-          <h3 class="text-gray-900 dark:text-gray-100">${article.hommage.nom}</h3>
-          <p class="text-gray-700 dark:text-gray-300 mt-2">${article.hommage.texte}</p>
+        <a href="index.html" class="text-blue-500 dark:text-blue-400 hover:underline mb-4 inline-block">← Retour aux articles</a>
+        <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">${article.titre}</h1>
+        <img src="${article.image}" alt="${article.titre}" class="w-full h-64 object-contain rounded mb-4">
+        <p class="text-gray-700 dark:text-gray-300 mb-4">${article.resume}</p>
+        ${sectionsHTML}
+        <h3 class="text-xl font-semibold mt-6 text-gray-900 dark:text-gray-100">Timeline</h3>
+        ${timelineHTML}
+        <h3 class="text-xl font-semibold mt-6 text-gray-900 dark:text-gray-100">Hommage</h3>
+        <div class="flex flex-row gap-6">
+            <img src="${article.hommage.photo}" alt="${article.hommage.nom}" class="w-48 h-48 object-contain rounded mt-2">
+            <div class="flex flex-col gap-6">
+                <h3 class="text-gray-900 dark:text-gray-100">${article.hommage.nom}</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-2">${article.hommage.texte}</p>
+            </div>
         </div>
-      </div>
     `;
-  }
-});
+}
+
+}
+);
