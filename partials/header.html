@@ -1,21 +1,38 @@
-<header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-10 sticky">
+<header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-10">
   <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    <h1 class="text-lg font-bold text-gray-800 dark:text-gray-100">Wikipedia 2.0</h1>
+    <!-- Logo -->
+    <h1 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+      Wikipedia 2.0
+    </h1>
 
+    <!-- Menu desktop -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Explorer</a>
+      <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Découverte rapide</a>
+      <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Contribuer</a>
+      <a href="../about.html" class="hover:text-blue-600 dark:hover:text-blue-400">À propos</a>
+    </nav>
+
+    <!-- Boutons à droite -->
     <div class="flex items-center space-x-4">
-      <!-- Bouton menu mobile -->
-      <button id="menu-btn" class="text-gray-600 dark:text-gray-300 focus:outline-none">☰</button>
+      <!-- Bouton menu mobile (visible que sur mobile) -->
+      <button id="menu-btn" class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
+        ☰
+      </button>
       <!-- Bouton Dark mode -->
-      <button id="theme-toggle" class="text-gray-600 dark:text-gray-300 focus:outline-none">🌙</button>
+      <button id="theme-toggle" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+        🌙
+      </button>
     </div>
   </div>
 
-  <nav id="mobile-menu" class="hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+  <!-- Menu mobile (seulement affiché si ouvert) -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
     <ul class="flex flex-col p-4 space-y-3">
       <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Explorer</a></li>
       <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Découverte rapide</a></li>
       <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Contribuer</a></li>
-      <li><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">À propos</a></li>
+      <li><a href="../about.html" class="hover:text-blue-600 dark:hover:text-blue-400">À propos</a></li>
     </ul>
   </nav>
 </header>
