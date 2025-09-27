@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia2.0 - a propos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script>
+    // Préserve le choix utilisateur
+    if (localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+  
+    <div id="header"></div>
+
+    <main>
+        <!-- Page À propos -->
+        <section id="about" class="max-w-3xl mx-auto p-6 mt-10 border-t border-gray-200 dark:border-gray-700">
+            <h1 class="text-3xl font-bold mb-4">À propos de MyWiki</h1>
+            <p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                MyWiki est un projet de démonstration visant à repenser l’interface
+                de Wikipédia de manière moderne, claire et adaptée aux usages actuels.
+            </p>
+            <p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Ce projet met en avant : conception UI/UX sur Figma, développement front
+                responsive en HTML/CSS/JS, et organisation du code avec une architecture MVC.
+            </p>
+            <p class="mt-6 text-gray-700 dark:text-gray-300">
+                Créé par <span class="font-semibold">Angélina Garaebiti</span> en 2025.
+            </p>
+        </section>
+    </main>
+    
+
+  <div id="footer"></div>
+  <script src="./js/app.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/footer.js"></script>
+</body>
+
+</html>
