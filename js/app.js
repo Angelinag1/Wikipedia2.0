@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Identifier le container existant
+    
     const container = document.getElementById("articles-container") || document.getElementById("article-container");
-    if (!container) return; // stop si aucun container trouvé
+    if (!container) return; 
 
     // JSON commun des articles
     const data = {
