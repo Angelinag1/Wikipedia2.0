@@ -35,8 +35,6 @@
     <div class="absolute inset-0 flex flex-col justify-top px-4 mt-6">
       <h2 class="text-2xl font-semibold">La connaissance, Moderne, Ouverte</h2>
       <p class="mt-2 text-sm">Des millions d’articles créés et partagés pour tous.</p>
-      <a href="#"
-        class="mt-4 bg-blue-600 px-4 py-2 rounded-xl text-white font-medium hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 w-full text-center">Explorer</a>
     </div>
   </section>
 
@@ -51,32 +49,48 @@
     </div>
   </section>
 
-<!-- HISTOIRE -->
-<section class="max-w-6xl mx-auto py-6 px-4">
-  <h3 class="text-lg font-semibold mb-3">Aujourd’hui dans l’histoire</h3>
-  <p class="mb-3">Des événements marquants chaque jour de l’année</p>
-  <div class="flex flex-col md:flex-row gap-6">
-    <!-- IMAGE -->
-    <img src="https://www.radiofrance.fr/pikapi/images/fb6b6433-0f78-45b6-af30-6a823b5ab530/1280?webp=false"
-      alt="Débat presidentiel Nixon vs Kennedy"
-      class="w-full md:w-1/2 h-auto object-cover rounded">
+  <!-- HISTOIRE -->
+  <section class="max-w-6xl mx-auto py-6 px-4">
+    <h3 class="text-lg font-semibold mb-3">Aujourd’hui dans l’histoire</h3>
+    <p class="mb-3">Des événements marquants chaque jour de l’année</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- CARTE 1 (contenu réel) -->
+      <div class="bg-white dark:bg-gray-800 shadow rounded-xl p-4 flex flex-col md:flex-row gap-6">
+        <img src="https://www.radiofrance.fr/pikapi/images/fb6b6433-0f78-45b6-af30-6a823b5ab530/1280?webp=false"
+          alt="Débat présidentiel Nixon vs Kennedy" class="w-full md:w-1/2 h-auto object-cover rounded">
 
-    <!-- TEXTE -->
-    <div class="flex flex-col justify-start md:w-1/2">
-      <p class="font-bold text-lg">26 septembre 1960 - Premier débat présidentiel télévisé aux États-Unis (Kennedy vs.
-        Nixon)</p>
-      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">John F. Kennedy et Richard Nixon participent au tout
-        premier débat présidentiel diffusé à la télévision. Cet événement historique marque un tournant dans la
-        politique américaine : l’image et la communication télévisuelle deviennent essentielles. Kennedy, confiant et
-        charismatique à l’écran, séduit l’audience télévisée, tandis que Nixon, affaibli et mal préparé visuellement,
-        apparaît défavorisé. Ce débat est souvent cité comme un moment clé ayant contribué à la victoire de Kennedy.</p>
-      <a href="#"
-        class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-medium text-center w-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
-        Voyager dans l’histoire →
-      </a>
+        <div class="flex flex-col justify-start md:w-1/2">
+          <p class="font-bold text-lg">26 septembre 1960 - Premier débat présidentiel télévisé aux États-Unis (Kennedy
+            vs.
+            Nixon)</p>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            John F. Kennedy et Richard Nixon participent au tout premier débat présidentiel diffusé à la télévision.
+            Cet événement historique marque un tournant dans la politique américaine : l’image et la communication
+            télévisuelle deviennent essentielles.
+          </p>
+          <a href="#"
+            class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-medium text-center w-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+            Voyager dans l’histoire →
+          </a>
+        </div>
+      </div>
+
+      <!-- CARTE 2 (skeleton loader) -->
+      <div class="bg-white dark:bg-gray-800 shadow rounded-xl p-4 flex flex-col md:flex-row gap-6 animate-pulse">
+        <div class="w-full md:w-1/2 h-64 bg-gray-300 dark:bg-gray-700 rounded"></div>
+
+        <div class="flex flex-col justify-start md:w-1/2 space-y-3">
+          <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+          <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+          <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
+          <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-2/3"></div>
+          <div class="mt-4 h-10 bg-gray-300 dark:bg-gray-700 rounded-xl w-1/2"></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+
+
+  </section>
 
 
   <!-- ARTICLES -->
@@ -93,7 +107,7 @@
     <h3 class="text-lg font-semibold mb-4">Participez à Wikipedia 2.0</h3>
     <p class="mb-3">Une encyclopédie libre, enrichie chaque jour par des milliers de personnes comme vous.</p>
     <div class="flex flex-row w-full">
-      <a href="#"
+      <a href="contribute.html"
         class="mt-auto inline-block bg-blue-600 dark:bg-blue-500 text-white text-center px-4 py-2 rounded-xl text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-600 w-screen mx-2">Commencer
         à contribuer</a>
       <a href="#"
